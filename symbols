@@ -592,6 +592,7 @@ librdkafka.so.1:rd_kafka_msgq_find_pos
 librdkafka.so.1:rd_kafka_msgq_insert_msgq
 librdkafka.so.1:rd_kafka_msgq_move_acked
 librdkafka.so.1:rd_kafka_msgq_set_metadata
+librdkafka.so.1:rd_kafka_msgq_split
 librdkafka.so.1:rd_kafka_msgq_verify_order0
 librdkafka.so.1:rd_kafka_msgset_create_ProduceRequest
 librdkafka.so.1:rd_kafka_msgset_parse
