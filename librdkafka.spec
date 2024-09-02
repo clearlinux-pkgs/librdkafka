@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : librdkafka
-Version  : 2.5.0.2
-Release  : 7
-URL      : https://github.com/edenhill/librdkafka/archive/v2.5.0-2/librdkafka-2.5.0.2.tar.gz
-Source0  : https://github.com/edenhill/librdkafka/archive/v2.5.0-2/librdkafka-2.5.0.2.tar.gz
+Version  : 2.5.3
+Release  : 8
+URL      : https://github.com/edenhill/librdkafka/archive/v2.5.3/librdkafka-2.5.3.tar.gz
+Source0  : https://github.com/edenhill/librdkafka/archive/v2.5.3/librdkafka-2.5.3.tar.gz
 Summary  : The Apache Kafka C library
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause ISC MIT Zlib
@@ -71,10 +71,10 @@ license components for the librdkafka package.
 
 
 %prep
-%setup -q -n librdkafka-2.5.0-2
-cd %{_builddir}/librdkafka-2.5.0-2
+%setup -q -n librdkafka-2.5.3
+cd %{_builddir}/librdkafka-2.5.3
 pushd ..
-cp -a librdkafka-2.5.0-2 buildavx2
+cp -a librdkafka-2.5.3 buildavx2
 popd
 
 %build
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1723044187
+export SOURCE_DATE_EPOCH=1725303140
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -154,23 +154,23 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1723044187
+export SOURCE_DATE_EPOCH=1725303140
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/librdkafka
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.cjson %{buildroot}/usr/share/package-licenses/librdkafka/5c753d7bf6e7cf01c2dde51c78a18f640d405369 || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.crc32c %{buildroot}/usr/share/package-licenses/librdkafka/1c729ec87a41f94eabbabb496454e54cf770c678 || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.hdrhistogram %{buildroot}/usr/share/package-licenses/librdkafka/25c13cb8c65676499760570c0bb60538e34c6b90 || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.murmur2 %{buildroot}/usr/share/package-licenses/librdkafka/199b0086de98cc0044deeedf89a7f819c9f9a5ce || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.opentelemetry %{buildroot}/usr/share/package-licenses/librdkafka/9a15442c3973a5fc80ade513dddd95eb12dbbc28 || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.pycrc %{buildroot}/usr/share/package-licenses/librdkafka/e8651e180555376b5c2b5ecd114981481a512546 || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.queue %{buildroot}/usr/share/package-licenses/librdkafka/7f653fbf85dbdf0f48138299d18381a6bfb101f1 || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.snappy %{buildroot}/usr/share/package-licenses/librdkafka/7e81b2429a98f39ef348b68a40eaac4b834f29a7 || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.tinycthread %{buildroot}/usr/share/package-licenses/librdkafka/14107287e77706772572744b1b3ecfde8960472d || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSE.wingetopt %{buildroot}/usr/share/package-licenses/librdkafka/e612d1fbaad7c0a278b025734f37cfa6bbb0b678 || :
-cp %{_builddir}/librdkafka-2.5.0-2/LICENSES.txt %{buildroot}/usr/share/package-licenses/librdkafka/d0e31cd8e85b759eb027859cf8e53556e1f68341 || :
-cp %{_builddir}/librdkafka-2.5.0-2/debian/copyright %{buildroot}/usr/share/package-licenses/librdkafka/87f4b5b0f5bce542751ece2daa6e314473cb7b4f || :
-cp %{_builddir}/librdkafka-2.5.0-2/packaging/cmake/Modules/LICENSE.FindZstd %{buildroot}/usr/share/package-licenses/librdkafka/b5ec887319537fbea3fa9804ac9a5cd5e40afd2e || :
-cp %{_builddir}/librdkafka-2.5.0-2/packaging/debian/copyright %{buildroot}/usr/share/package-licenses/librdkafka/a35749a8a0906df91ed2468874e9229b95a8fba7 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.cjson %{buildroot}/usr/share/package-licenses/librdkafka/5c753d7bf6e7cf01c2dde51c78a18f640d405369 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.crc32c %{buildroot}/usr/share/package-licenses/librdkafka/1c729ec87a41f94eabbabb496454e54cf770c678 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.hdrhistogram %{buildroot}/usr/share/package-licenses/librdkafka/25c13cb8c65676499760570c0bb60538e34c6b90 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.murmur2 %{buildroot}/usr/share/package-licenses/librdkafka/199b0086de98cc0044deeedf89a7f819c9f9a5ce || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.opentelemetry %{buildroot}/usr/share/package-licenses/librdkafka/9a15442c3973a5fc80ade513dddd95eb12dbbc28 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.pycrc %{buildroot}/usr/share/package-licenses/librdkafka/e8651e180555376b5c2b5ecd114981481a512546 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.queue %{buildroot}/usr/share/package-licenses/librdkafka/7f653fbf85dbdf0f48138299d18381a6bfb101f1 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.snappy %{buildroot}/usr/share/package-licenses/librdkafka/7e81b2429a98f39ef348b68a40eaac4b834f29a7 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.tinycthread %{buildroot}/usr/share/package-licenses/librdkafka/14107287e77706772572744b1b3ecfde8960472d || :
+cp %{_builddir}/librdkafka-%{version}/LICENSE.wingetopt %{buildroot}/usr/share/package-licenses/librdkafka/e612d1fbaad7c0a278b025734f37cfa6bbb0b678 || :
+cp %{_builddir}/librdkafka-%{version}/LICENSES.txt %{buildroot}/usr/share/package-licenses/librdkafka/d0e31cd8e85b759eb027859cf8e53556e1f68341 || :
+cp %{_builddir}/librdkafka-%{version}/debian/copyright %{buildroot}/usr/share/package-licenses/librdkafka/87f4b5b0f5bce542751ece2daa6e314473cb7b4f || :
+cp %{_builddir}/librdkafka-%{version}/packaging/cmake/Modules/LICENSE.FindZstd %{buildroot}/usr/share/package-licenses/librdkafka/b5ec887319537fbea3fa9804ac9a5cd5e40afd2e || :
+cp %{_builddir}/librdkafka-%{version}/packaging/debian/copyright %{buildroot}/usr/share/package-licenses/librdkafka/a35749a8a0906df91ed2468874e9229b95a8fba7 || :
 export GOAMD64=v2
 pushd ../buildavx2/
 GOAMD64=v3
