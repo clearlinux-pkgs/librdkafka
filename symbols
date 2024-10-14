@@ -253,6 +253,7 @@ librdkafka.so.1:rd_kafka_AdminOptions_set_broker
 librdkafka.so.1:rd_kafka_AdminOptions_set_include_authorized_operations
 librdkafka.so.1:rd_kafka_AdminOptions_set_isolation_level
 librdkafka.so.1:rd_kafka_AdminOptions_set_match_consumer_group_states
+librdkafka.so.1:rd_kafka_AdminOptions_set_match_consumer_group_types
 librdkafka.so.1:rd_kafka_AdminOptions_set_opaque
 librdkafka.so.1:rd_kafka_AdminOptions_set_operation_timeout
 librdkafka.so.1:rd_kafka_AdminOptions_set_request_timeout
@@ -311,6 +312,7 @@ librdkafka.so.1:rd_kafka_ConsumerGroupHeartbeatRequest
 librdkafka.so.1:rd_kafka_ConsumerGroupListing_group_id
 librdkafka.so.1:rd_kafka_ConsumerGroupListing_is_simple_consumer_group
 librdkafka.so.1:rd_kafka_ConsumerGroupListing_state
+librdkafka.so.1:rd_kafka_ConsumerGroupListing_type
 librdkafka.so.1:rd_kafka_CreateAcls
 librdkafka.so.1:rd_kafka_CreateAclsRequest
 librdkafka.so.1:rd_kafka_CreateAcls_result_acls
@@ -369,6 +371,12 @@ librdkafka.so.1:rd_kafka_DescribeTopics_result_topics
 librdkafka.so.1:rd_kafka_DescribeUserScramCredentials
 librdkafka.so.1:rd_kafka_DescribeUserScramCredentialsRequest
 librdkafka.so.1:rd_kafka_DescribeUserScramCredentials_result_descriptions
+librdkafka.so.1:rd_kafka_ElectLeaders
+librdkafka.so.1:rd_kafka_ElectLeadersRequest
+librdkafka.so.1:rd_kafka_ElectLeaders_copy
+librdkafka.so.1:rd_kafka_ElectLeaders_destroy
+librdkafka.so.1:rd_kafka_ElectLeaders_new
+librdkafka.so.1:rd_kafka_ElectLeaders_result_partitions
 librdkafka.so.1:rd_kafka_EndTxnRequest
 librdkafka.so.1:rd_kafka_FindCoordinatorRequest
 librdkafka.so.1:rd_kafka_GetTelemetrySubscriptionsRequest
@@ -686,6 +694,8 @@ librdkafka.so.1:rd_kafka_consumer_group_metadata_read
 librdkafka.so.1:rd_kafka_consumer_group_metadata_write
 librdkafka.so.1:rd_kafka_consumer_group_state_code
 librdkafka.so.1:rd_kafka_consumer_group_state_name
+librdkafka.so.1:rd_kafka_consumer_group_type_code
+librdkafka.so.1:rd_kafka_consumer_group_type_name
 librdkafka.so.1:rd_kafka_consumer_poll
 librdkafka.so.1:rd_kafka_consumer_protocol_member_metadata_new
 librdkafka.so.1:rd_kafka_controllerid
@@ -750,6 +760,7 @@ librdkafka.so.1:rd_kafka_event_DescribeConfigs_result
 librdkafka.so.1:rd_kafka_event_DescribeConsumerGroups_result
 librdkafka.so.1:rd_kafka_event_DescribeTopics_result
 librdkafka.so.1:rd_kafka_event_DescribeUserScramCredentials_result
+librdkafka.so.1:rd_kafka_event_ElectLeaders_result
 librdkafka.so.1:rd_kafka_event_IncrementalAlterConfigs_result
 librdkafka.so.1:rd_kafka_event_ListConsumerGroupOffsets_result
 librdkafka.so.1:rd_kafka_event_ListConsumerGroups_result
@@ -970,6 +981,7 @@ librdkafka.so.1:rd_kafka_mock_connection_send_response0
 librdkafka.so.1:rd_kafka_mock_connection_set_blocking
 librdkafka.so.1:rd_kafka_mock_coordinator_set
 librdkafka.so.1:rd_kafka_mock_get_requests
+librdkafka.so.1:rd_kafka_mock_group_initial_rebalance_delay_ms
 librdkafka.so.1:rd_kafka_mock_handle_PushTelemetry_payload
 librdkafka.so.1:rd_kafka_mock_msgset_find
 librdkafka.so.1:rd_kafka_mock_next_request_error
@@ -1323,6 +1335,14 @@ librdkafka.so.1:rd_kafka_topic_partition_new
 librdkafka.so.1:rd_kafka_topic_partition_new_from_rktp
 librdkafka.so.1:rd_kafka_topic_partition_new_with_topic_id
 librdkafka.so.1:rd_kafka_topic_partition_partition
+librdkafka.so.1:rd_kafka_topic_partition_result_copy
+librdkafka.so.1:rd_kafka_topic_partition_result_copy_opaque
+librdkafka.so.1:rd_kafka_topic_partition_result_destroy
+librdkafka.so.1:rd_kafka_topic_partition_result_destroy_array
+librdkafka.so.1:rd_kafka_topic_partition_result_error
+librdkafka.so.1:rd_kafka_topic_partition_result_free
+librdkafka.so.1:rd_kafka_topic_partition_result_new
+librdkafka.so.1:rd_kafka_topic_partition_result_partition
 librdkafka.so.1:rd_kafka_topic_partition_set_current_leader_epoch
 librdkafka.so.1:rd_kafka_topic_partition_set_from_fetch_pos
 librdkafka.so.1:rd_kafka_topic_partition_set_leader_epoch
@@ -1532,6 +1552,17 @@ librdkafka.so.1:thrd_is_current
 librdkafka.so.1:thrd_setname
 librdkafka.so.1:unit_test_telemetry
 librdkafka.so.1:unit_test_telemetry_gauge
+librdkafka.so.1:unit_test_telemetry_set_commit_latency
+librdkafka.so.1:unit_test_telemetry_set_connects
+librdkafka.so.1:unit_test_telemetry_set_connects2
+librdkafka.so.1:unit_test_telemetry_set_coordinator_assigned_partitions
+librdkafka.so.1:unit_test_telemetry_set_fetch_latency
+librdkafka.so.1:unit_test_telemetry_set_poll_idle_ratio
+librdkafka.so.1:unit_test_telemetry_set_produce_latency
+librdkafka.so.1:unit_test_telemetry_set_queue_time
+librdkafka.so.1:unit_test_telemetry_set_rebalance_latency
+librdkafka.so.1:unit_test_telemetry_set_rtt
+librdkafka.so.1:unit_test_telemetry_set_throttle_time
 librdkafka.so.1:unit_test_telemetry_sum
 librdkafka.so.1:unittest_aborted_txns
 librdkafka.so.1:unittest_assignors
