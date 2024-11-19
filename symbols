@@ -1396,6 +1396,7 @@ librdkafka.so.1:rd_kafka_toppar_op_version_bump
 librdkafka.so.1:rd_kafka_toppar_pause
 librdkafka.so.1:rd_kafka_toppar_pid_change
 librdkafka.so.1:rd_kafka_toppar_purge_and_disable_queues
+librdkafka.so.1:rd_kafka_toppar_purge_internal_fetch_queue_maybe
 librdkafka.so.1:rd_kafka_toppar_purge_queues
 librdkafka.so.1:rd_kafka_toppar_resume
 librdkafka.so.1:rd_kafka_toppar_retry_msgq
