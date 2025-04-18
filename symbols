@@ -288,6 +288,7 @@ librdkafka.so.1:rd_kafka_ConfigEntry_name
 librdkafka.so.1:rd_kafka_ConfigEntry_source
 librdkafka.so.1:rd_kafka_ConfigEntry_synonyms
 librdkafka.so.1:rd_kafka_ConfigEntry_value
+librdkafka.so.1:rd_kafka_ConfigResourceType_to_ResourceType
 librdkafka.so.1:rd_kafka_ConfigResource_add_incremental_config
 librdkafka.so.1:rd_kafka_ConfigResource_configs
 librdkafka.so.1:rd_kafka_ConfigResource_destroy
@@ -299,6 +300,7 @@ librdkafka.so.1:rd_kafka_ConfigResource_new
 librdkafka.so.1:rd_kafka_ConfigResource_set_config
 librdkafka.so.1:rd_kafka_ConfigResource_type
 librdkafka.so.1:rd_kafka_ConfigSource_name
+librdkafka.so.1:rd_kafka_ConsumerGroupDescribeRequest
 librdkafka.so.1:rd_kafka_ConsumerGroupDescription_authorized_operations
 librdkafka.so.1:rd_kafka_ConsumerGroupDescription_coordinator
 librdkafka.so.1:rd_kafka_ConsumerGroupDescription_error
@@ -308,6 +310,7 @@ librdkafka.so.1:rd_kafka_ConsumerGroupDescription_member
 librdkafka.so.1:rd_kafka_ConsumerGroupDescription_member_count
 librdkafka.so.1:rd_kafka_ConsumerGroupDescription_partition_assignor
 librdkafka.so.1:rd_kafka_ConsumerGroupDescription_state
+librdkafka.so.1:rd_kafka_ConsumerGroupDescription_type
 librdkafka.so.1:rd_kafka_ConsumerGroupHeartbeatRequest
 librdkafka.so.1:rd_kafka_ConsumerGroupListing_group_id
 librdkafka.so.1:rd_kafka_ConsumerGroupListing_is_simple_consumer_group
@@ -409,6 +412,7 @@ librdkafka.so.1:rd_kafka_MemberDescription_client_id
 librdkafka.so.1:rd_kafka_MemberDescription_consumer_id
 librdkafka.so.1:rd_kafka_MemberDescription_group_instance_id
 librdkafka.so.1:rd_kafka_MemberDescription_host
+librdkafka.so.1:rd_kafka_MemberDescription_target_assignment
 librdkafka.so.1:rd_kafka_MetadataRequest
 librdkafka.so.1:rd_kafka_MetadataRequest_resp_cb
 librdkafka.so.1:rd_kafka_NewPartitions_destroy
@@ -440,6 +444,7 @@ librdkafka.so.1:rd_kafka_Produce_result_new
 librdkafka.so.1:rd_kafka_PushTelemetryRequest
 librdkafka.so.1:rd_kafka_ResourcePatternType_name
 librdkafka.so.1:rd_kafka_ResourceType_name
+librdkafka.so.1:rd_kafka_ResourceType_to_ConfigResourceType
 librdkafka.so.1:rd_kafka_SaslAuthenticateRequest
 librdkafka.so.1:rd_kafka_SaslHandshakeRequest
 librdkafka.so.1:rd_kafka_ScramCredentialInfo_iterations
@@ -536,6 +541,7 @@ librdkafka.so.1:rd_kafka_broker_connect_up
 librdkafka.so.1:rd_kafka_broker_consumer_toppar_serve
 librdkafka.so.1:rd_kafka_broker_controller
 librdkafka.so.1:rd_kafka_broker_controller_async
+librdkafka.so.1:rd_kafka_broker_decommission
 librdkafka.so.1:rd_kafka_broker_destroy_final
 librdkafka.so.1:rd_kafka_broker_fail
 librdkafka.so.1:rd_kafka_broker_fetch_toppars
@@ -562,6 +568,7 @@ librdkafka.so.1:rd_kafka_brokers_add0
 librdkafka.so.1:rd_kafka_brokers_broadcast_state_change
 librdkafka.so.1:rd_kafka_brokers_get_nodeids_async
 librdkafka.so.1:rd_kafka_brokers_get_state_version
+librdkafka.so.1:rd_kafka_brokers_learned_ids
 librdkafka.so.1:rd_kafka_brokers_wait_state_change
 librdkafka.so.1:rd_kafka_brokers_wait_state_change_async
 librdkafka.so.1:rd_kafka_buf_calc_timeout
@@ -714,6 +721,7 @@ librdkafka.so.1:rd_kafka_coord_reqs_init
 librdkafka.so.1:rd_kafka_coord_reqs_term
 librdkafka.so.1:rd_kafka_coord_rkb_monitor_cb
 librdkafka.so.1:rd_kafka_crash
+librdkafka.so.1:rd_kafka_decommissioned_broker_thread_join
 librdkafka.so.1:rd_kafka_default_topic_conf_dup
 librdkafka.so.1:rd_kafka_desensitize_str
 librdkafka.so.1:rd_kafka_destroy
@@ -953,9 +961,12 @@ librdkafka.so.1:rd_kafka_mock_Fetch_reply_tags_partition_write
 librdkafka.so.1:rd_kafka_mock_Fetch_reply_tags_write
 librdkafka.so.1:rd_kafka_mock_Produce_reply_tags_partition_write
 librdkafka.so.1:rd_kafka_mock_Produce_reply_tags_write
+librdkafka.so.1:rd_kafka_mock_broker_add
+librdkafka.so.1:rd_kafka_mock_broker_decommission
 librdkafka.so.1:rd_kafka_mock_broker_error_stack_cnt
 librdkafka.so.1:rd_kafka_mock_broker_push_request_error_rtts
 librdkafka.so.1:rd_kafka_mock_broker_set_down
+librdkafka.so.1:rd_kafka_mock_broker_set_host_port
 librdkafka.so.1:rd_kafka_mock_broker_set_rack
 librdkafka.so.1:rd_kafka_mock_broker_set_rtt
 librdkafka.so.1:rd_kafka_mock_broker_set_up
@@ -1176,6 +1187,7 @@ librdkafka.so.1:rd_kafka_range_assignor_assign_cb
 librdkafka.so.1:rd_kafka_range_assignor_init
 librdkafka.so.1:rd_kafka_rebalance_op_incr
 librdkafka.so.1:rd_kafka_rebalance_protocol
+librdkafka.so.1:rd_kafka_rebootstrap
 librdkafka.so.1:rd_kafka_recv
 librdkafka.so.1:rd_kafka_resume_partitions
 librdkafka.so.1:rd_kafka_retry_msgq
@@ -1311,6 +1323,7 @@ librdkafka.so.1:rd_kafka_topic_partition_list_add_with_topic_id
 librdkafka.so.1:rd_kafka_topic_partition_list_add_with_topic_name_and_id
 librdkafka.so.1:rd_kafka_topic_partition_list_clear
 librdkafka.so.1:rd_kafka_topic_partition_list_cmp
+librdkafka.so.1:rd_kafka_topic_partition_list_combine_regexes
 librdkafka.so.1:rd_kafka_topic_partition_list_copy
 librdkafka.so.1:rd_kafka_topic_partition_list_copy_opaque
 librdkafka.so.1:rd_kafka_topic_partition_list_count_abs_offsets
@@ -1339,6 +1352,7 @@ librdkafka.so.1:rd_kafka_topic_partition_list_new
 librdkafka.so.1:rd_kafka_topic_partition_list_query_leaders
 librdkafka.so.1:rd_kafka_topic_partition_list_query_leaders_async
 librdkafka.so.1:rd_kafka_topic_partition_list_regex_cnt
+librdkafka.so.1:rd_kafka_topic_partition_list_remove_regexes
 librdkafka.so.1:rd_kafka_topic_partition_list_reset_offsets
 librdkafka.so.1:rd_kafka_topic_partition_list_set_err
 librdkafka.so.1:rd_kafka_topic_partition_list_set_offset
@@ -1382,6 +1396,7 @@ librdkafka.so.1:rd_kafka_topic_result_name
 librdkafka.so.1:rd_kafka_topic_result_new
 librdkafka.so.1:rd_kafka_topic_scan_all
 librdkafka.so.1:rd_kafka_topic_set_error
+librdkafka.so.1:rd_kafka_topic_set_exists
 librdkafka.so.1:rd_kafka_topic_set_notexists
 librdkafka.so.1:rd_kafka_toppar_broker
 librdkafka.so.1:rd_kafka_toppar_broker_delegate
@@ -1398,9 +1413,10 @@ librdkafka.so.1:rd_kafka_toppar_destroy_final
 librdkafka.so.1:rd_kafka_toppar_enq_error
 librdkafka.so.1:rd_kafka_toppar_enq_msg
 librdkafka.so.1:rd_kafka_toppar_fetch_decide
-librdkafka.so.1:rd_kafka_toppar_fetch_decide_start_from_next_fetch_start
+librdkafka.so.1:rd_kafka_toppar_fetch_decide_next_fetch_start_pos
 librdkafka.so.1:rd_kafka_toppar_fetch_stop
 librdkafka.so.1:rd_kafka_toppar_fetch_stopped
+librdkafka.so.1:rd_kafka_toppar_forget_leader
 librdkafka.so.1:rd_kafka_toppar_get0
 librdkafka.so.1:rd_kafka_toppar_get2
 librdkafka.so.1:rd_kafka_toppar_get_avail
@@ -1425,6 +1441,7 @@ librdkafka.so.1:rd_kafka_toppar_resume
 librdkafka.so.1:rd_kafka_toppar_retry_msgq
 librdkafka.so.1:rd_kafka_toppar_seek
 librdkafka.so.1:rd_kafka_toppar_set_fetch_state
+librdkafka.so.1:rd_kafka_toppar_undelegate
 librdkafka.so.1:rd_kafka_toppars_pause_resume
 librdkafka.so.1:rd_kafka_transport_close
 librdkafka.so.1:rd_kafka_transport_connect
